@@ -1,0 +1,32 @@
+.head-text{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 97px;
+    text-align: center;
+    color: #621814;
+}
+
+.container-topup{
+    min-width: 360px;
+}
+
+.text-decs{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #621814;
+}
+
+.input{
+
+    border: 1px solid #621814;
+    border-radius: 10px;
+    background-color: #FEFAE7;
+    width: 100%;
+}
+
+.cancel-btn{
+    background: #EFECEC;
+    border-radius: 15px;
+}
