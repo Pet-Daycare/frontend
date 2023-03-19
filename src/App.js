@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage';
 import DashboardUser from './pages/DashboardUser'
 import BookReservation from './pages/BookReservation';
 import TopUpWallet from './pages/TopUpWallet'
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
           <Route path="dashboard" element={<DashboardUser/>} />
           <Route path="book-reservation" element={<BookReservation/>} />
           <Route path="topup" element={<TopUpWallet/>} />
+          <Route path="login" element={<Login/>} />
 
-          {/* TAMABAHIN ROUTE DISINI YA */}
+          {/* TAMBAHIN ROUTE DISINI YA */}
         </Routes>
       </BrowserRouter>
   );
