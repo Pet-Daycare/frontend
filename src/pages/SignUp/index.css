@@ -1,0 +1,74 @@
+.row {
+    --bs-gutter-x: 0;
+  }
+  .pet-img {
+    margin: 6%;
+  }
+  td {
+    padding: 0 5px;
+  }
+  table {
+    margin: 0 auto;
+  }
+  .position-custom {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0;
+  }
+  .signup_btn {
+    margin: 4% 2%;
+    padding: 6px 33px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    background: #00a6a6;
+    border-radius: 15px;
+    border: 3px solid #00a6a6;
+  }
+  .signup_btn:hover {
+    margin: 4% 2%;
+    padding: 6px 33px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+    background: #fefae7;
+    border-radius: 15px;
+    border: 3px solid #00a6a6;
+  }
+  .signup {
+    border: 1px solid #621814;
+    border-radius: 10px;
+    background-color: #FEFAE7;
+    margin-top: 10px; 
+  }
+  
+  .signup-page {
+    background-color: #fefae7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .greeting {
+    margin-bottom: 3%;
+    font-family: "Fredoka";
+  }
+  .hello {
+    color: #621814;
+    font-weight: bold;
+    font-size: 82px;
+  }
+  .lets {
+    color: #885855;
+    font-size: 40px;
+  }
+  span {
+    display: block;
+    line-height: 100%;
+    text-align: center;
+  }
+  .to-login {
+    color: #8D93AB;
+  }

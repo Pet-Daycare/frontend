@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import HeaderDashboard from '../../components/HeaderDashboard'
 import pet from '../../assets/pet.svg'
+import { Link } from 'react-router-dom'
 
 function Login() {
  
@@ -10,21 +11,24 @@ function Login() {
       <HeaderDashboard/>
       <div class="row">
         <div class="col">
-            <img class='pet-img' src={pet} width="80%"/>
+            <img class='pet-img' src={pet} alt="pet" width="80%"/>
         </div>
         
         <div class="col position-custom">
             <div class='greeting'>
-                <h1 class='hello'>Hello!</h1>
-                <h4 class='welcome'>Welcome back!</h4>
+                <span class='hello'>Hello!</span>
+                <span class='welcome'>Welcome back!</span>
             </div>
 
             <div class='field'>
-                <input type="text" class="form-control" id="username" placeholder="Username"></input>
-                <input type="password" class="form-control" id="password" placeholder="Password"></input>
+                <input type="text" class="form-control login" id="username" placeholder="Username"></input>
+                <input type="password" class="form-control login" id="password" placeholder="Password"></input> 
             </div>
 
             <button class="login_btn" type="submit">Login</button>
+
+
+            <span className='to-signup'> Not a member? <Link to="/signup" style={{ textDecoration: 'none', color: '#00A6A6' }}>Register</Link></span>
 
           </div>
       </div>
