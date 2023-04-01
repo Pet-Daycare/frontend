@@ -46,7 +46,7 @@ function SignUp() {
 
             <button class="signup_btn" type="submit">Sign Up</button>
 
-            <span className='to-login'> Already a member? <Link to="/login" style={{ textDecoration: 'none', color: '#00A6A6'}}>Login</Link></span>
+            <span className='to_login'> Already a member? <Link to="/login" style={{ textDecoration: 'none', color: '#00A6A6'}}>Login</Link></span>
 
           </div>
       </div>

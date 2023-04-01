@@ -28,7 +28,7 @@ function Login() {
             <button class="login_btn" type="submit">Login</button>
 
 
-            <span className='to-signup'> Not a member? <Link to="/signup" style={{ textDecoration: 'none', color: '#00A6A6' }}>Register</Link></span>
+            <span className='to_signup'> Not a member? <Link to="/signup" style={{ textDecoration: 'none', color: '#00A6A6' }}>Register</Link></span>
 
           </div>
       </div>

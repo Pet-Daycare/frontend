@@ -1,0 +1,75 @@
+.row {
+    --bs-gutter-x: 0;
+  }
+  .pet-img {
+    margin: 6%;
+  }
+  table {
+    text-align: left;
+  }
+  .position-custom {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0;
+  }
+  .book_btn {
+    padding: 4px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    background: #00a6a6;
+    border-radius: 15px;
+    border: 3px solid #00a6a6;
+    margin-top: 4%;
+    margin-right: 30%;
+  }
+  .book_btn:hover {
+    padding: 4px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+    background: #fefae7;
+    border-radius: 15px;
+    border: 3px solid #00a6a6;
+    margin-top: 4%;
+    margin-right: 30%;
+  }
+  .landing-page {
+    background-color: #fefae7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .greeting {
+    margin-bottom: 3%;
+    font-family: "Fredoka";
+  }
+  .slogan {
+    color: #621814;
+    font-weight: 900;
+    font-size: 80px;
+  }
+  .welcome {
+    color: #885855;
+    font-size: 40px;
+  }
+  br {
+    display: block;
+    margin-top: 0;
+  }
+  span {
+    display: block;
+    line-height: 100%;
+    text-align: center;
+  }
+  .desc {
+    text-align: justify;
+    width: 400px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
