@@ -1,0 +1,68 @@
+.book-page {
+  height: 100vh;
+  background-color: #fefae7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.title {
+  margin: 3%;
+  font-family: "Fredoka";
+  color: #621814;
+  font-weight: 800;
+  font-size: 50px;
+}
+.book {
+  border: 1px solid #621814;
+  border-radius: 10px;
+  background-color: #fefae7;
+  margin-bottom: 10px;
+}
+table {
+  width: 500px;
+}
+.form {
+  padding: 0 15px;
+}
+label {
+  color: #621814;
+}
+option {
+  color: #621814;
+}
+button {
+  width: max-content;
+}
+.button_group {
+  margin-top: 2%;
+  margin-left: 4%;
+}
+.cancel_btn {
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  color: #9b9b9b;
+  background: #efecec;
+  border-radius: 15px;
+  border: 3px solid #fefae7;
+  margin-top: 4%;
+  margin-right: 30%;
+}
+.cancel_btn:hover {
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  color: black;
+  background: white;
+  border-radius: 15px;
+  border: 3px solid #fefae7;
+  margin-top: 4%;
+  margin-right: 30%;
+}
+col {
+  align: center;
+}
