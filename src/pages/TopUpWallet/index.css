@@ -6,6 +6,13 @@
     text-align: center;
     color: #621814;
 }
+.topup-page {
+    height: 100vh;
+    background-color: #fefae7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 
 .container-topup{
     min-width: 360px;
@@ -19,14 +26,34 @@
 }
 
 .input{
-
     border: 1px solid #621814;
     border-radius: 10px;
     background-color: #FEFAE7;
     width: 100%;
 }
-
-.cancel-btn{
-    background: #EFECEC;
+.topup_btn {
+    padding: 4px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    background: #F08700;
     border-radius: 15px;
-}
+    border: 3px solid #F08700;
+    margin-top: 4%;
+    margin-right: 30%;
+  }
+  .topup_btn:hover {
+    padding: 4px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+    background: #fefae7;
+    border-radius: 15px;
+    border: 3px solid #F08700;
+    margin-top: 4%;
+    margin-right: 30%;
+  }
