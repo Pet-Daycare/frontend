@@ -12,7 +12,7 @@
   font-weight: 800;
   font-size: 50px;
 }
-.form-control {
+.form-control, .form-select {
   border: 1px solid #621814;
   border-radius: 10px;
   background-color: #fefae7;

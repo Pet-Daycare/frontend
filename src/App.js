@@ -9,6 +9,7 @@ import TopUpWallet from './pages/TopUpWallet'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import ChangeDate from './pages/ChangeDate';
+import Payment from './pages/Payment';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<SignUp/>} />
           <Route path="edit" element={<ChangeDate/>} />
+          <Route path="payment" element={<Payment/>} />
 
           {/* TAMBAHIN ROUTE DISINI YA */}
         </Routes>
