@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.scss';
 
 import NavigationAdmin from '../../components/NavigationAdmin';
@@ -8,6 +8,45 @@ import CheckCircle from '../../assets/check-circle.svg';
 
 
 function DashboardAdmin() {
+
+    const [date, setDate] = useState();
+
+    function getDate(){
+        const d = new Date();   
+        console.log(dates[d.getDay()])
+        const day = dates[d.getDay()];
+
+        setDate(dates[d.getDay()] + ", " + d.getDate() + " " + month[d.getMonth()]+ " " + d.getFullYear())
+    }
+
+    const dates = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'   
+    ];
+
+    const month = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'December',
+    ]
+
+
+    if(date==null){
+        getDate();
+    }
   return (
     <div className='row'>
       <div className='col-3'>
@@ -16,7 +55,7 @@ function DashboardAdmin() {
     <div className='col-9 main-dash-admin'>
         <div>
             <h3>Admin Dashboard</h3>
-            <p>Sunday, 01 April 2023</p>
+            <p>{date}</p>
         </div>
 
         <div className='row welcome-admin-tag'>
