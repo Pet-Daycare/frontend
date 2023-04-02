@@ -2,6 +2,7 @@ import React from 'react';
 import './index.scss';
 
 import TopUpButton from '../../assets/Wallet-disable.svg'
+import { Link } from 'react-router-dom';
 
 function CardBalance() {
   return (
@@ -13,10 +14,10 @@ function CardBalance() {
         </div>
         <hr/>
         <div className='toggle-btn'>
-            <a href='' className='d-flex '>
+            <Link to='/dashboard/topup' className='d-flex '>
                 <img src={TopUpButton}/>
                 <p>Top up balance</p>
-            </a>
+            </Link>
         </div>
     </div>
   )

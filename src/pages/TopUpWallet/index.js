@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useState } from "react";
 import './index.css'
 import HeaderLogout from '../../components/HeaderLogout'
+import { useNavigate } from "react-router-dom";
 
 function TopUp() {
+  const navigate = useNavigate();
+  const [nominal, setNominal] = useState();
+
+  const handleSubmit = (e) => {
+    // TODO: LOGIC
+
+     navigate('/dashboard')
+  }
+
+  const handleCancel = (e) => {
+    // TODO: LOGIC
+
+     navigate('/dashboard')
+  }
   return (
     <div className='topup-page'>
       <HeaderLogout/>
@@ -30,10 +45,10 @@ function TopUp() {
             <div class="row justify-content-center button_group">
           <div class="col-4"></div>
           <div class="col-4">
-            <button class="cancel_btn">Cancel</button>
+            <button class="cancel_btn" onClick={handleCancel}>Cancel</button>
           </div>
           <div class="col-4">
-            <button class="topup_btn">Top Up</button>
+            <button class="topup_btn" onClick={handleSubmit}>Top Up</button>
           </div>
         </div>
         </div>

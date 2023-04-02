@@ -6,7 +6,7 @@ function HeaderLogout() {
   return (
     <div className='header-logout'>
       <img src={Logo}></img>
-      <button class="logout_btn">Logout</button>
+      <button class="logout_btn" onClick={(e) => {localStorage.clear()}}>Logout</button>
     </div>
   )
 }

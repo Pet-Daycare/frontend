@@ -3,6 +3,7 @@ import AddButton from '../../assets/add-penitipan-customer.svg';
 import DashboardActiveIcon from '../../assets/dashboard-customer-icon.svg';
 import TransaksiIcon from '../../assets/transaksi-disable.svg';
 import HistoryTransaksiIcon from '../../assets/Wallet-disable.svg';
+import { Link } from 'react-router-dom';
 
 import './index.scss';
 
@@ -13,24 +14,24 @@ function NavigationCustomer() {
             <p>
                 Book Reservation
             </p>
-            <a href=''>
+            <Link to='book-reservation'>
                 <img src={AddButton}/>
-            </a>
+            </Link>
         </div>
         
         <div className='toggle-nav'>
-            <a href='' className='d-flex justify-content-between'>
+            <Link to='/dashboard' className='d-flex justify-content-between'>
                 <img src={DashboardActiveIcon}/>
                 <p className='active-nav-btn'>Dashboard</p>
-            </a>
-            <a href='' className='d-flex justify-content-between '>
+            </Link>
+            <Link to='/dashboard'  className='d-flex justify-content-between '>
                 <img src={TransaksiIcon}/>
                 <p>Transaksi</p>
-            </a>
-            <a href='' className='d-flex justify-content-between '>
+            </Link>
+            <Link to='/dashboard' className='d-flex justify-content-between '>
                 <img src={HistoryTransaksiIcon}/>
                 <p>History Transaction</p>
-            </a>
+            </Link>
         </div>
     </div>
   )

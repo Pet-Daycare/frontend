@@ -36,21 +36,6 @@ function Dashboard() {
   return (
     <div className='main-dashboard'>
       <HeaderDashboard />
-      {/* <div className='container'>
-        <div className='d-flex justify-content-between'>
-          <p className='text-name-dash'>
-            Hai, Jane
-          </p>
-  
-            <button className='btn btn-reserve btn-block'>
-            Book Reservation
-          </button>
-        </div>
-
-        <div className='mt-5'>
-          {reserve()}
-        </div>
-      </div> */}
       <div className='row'>
         <div className='col-3'><NavigationCustomer/></div>
         <div className='col-9 p-5'>
