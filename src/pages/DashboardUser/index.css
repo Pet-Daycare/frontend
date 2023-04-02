@@ -5,7 +5,7 @@
 }
 .main-dashboard{
     background-color: #FEFAE7 ;
-    height: 100vh;
+    height: 100%;
 }
 
 .btn-reserve{
@@ -49,4 +49,7 @@
     color: #621814;
 }
 
-
+.relative-header{
+    position: fixed;
+    /* left: 0px; */
+}
