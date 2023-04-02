@@ -1,0 +1,82 @@
+.nav-admin{
+    padding: 40px 60px;
+    
+    .img-logo{
+        text-align: center;
+    }
+    .btn-penitipan{
+        background: #F2FFFF;
+        border-radius: 20px; 
+        padding: 17px; 
+        display: flex;
+        margin-top: 3rem;
+        justify-content: space-between;          
+        p{
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 26px;
+            width: 83px;
+            margin: 0;
+        }
+        img{
+            height: 50px;
+            margin: auto
+        }
+    }
+
+    .toggle-nav-ad{
+        padding: 0 2.5rem 2.5rem 2.5rem;
+        a{
+            display: flex;
+            margin: 0;
+            margin-top: 3rem;
+            text-decoration: none;
+            p{
+                margin: auto 20px;
+                color: #9B9B9B;         
+                font-weight: 400;
+                font-size: 20px;    
+            }
+            
+            p:hover{
+                color: #007D7D;
+
+            }
+            img{
+                height: 24px;
+                margin: auto 0;
+            }
+        }
+        .active-toggle{
+            p{
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 30px;
+                color: #007D7D;
+            }
+        }
+    }
+    .log-out{
+        
+        a{
+            text-decoration: none;
+            width: fit-content;
+            width: 100%;
+            padding: 1rem 2.5rem 2.5rem 2.5rem;
+
+            img{
+                height: 24px;
+                margin: auto 0;
+            }
+    
+            p{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 30px;
+                color: #C32F27;
+                margin: auto 15px;
+            }
+        }
+    }
+}
