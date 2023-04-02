@@ -4,8 +4,11 @@
   .pet-img {
     margin: 6%;
   }
+  td {
+    padding: 0 5px;
+  }
   table {
-    text-align: left;
+    margin: 0 auto;
   }
   .position-custom {
     text-align: center;
@@ -13,33 +16,36 @@
     margin-bottom: auto;
     margin-right: 0;
   }
-  .book_btn {
-    padding: 4px 16px;
+  .signup_btn {
+    margin: 4% 2%;
+    padding: 6px 33px;
     text-align: center;
     display: inline-block;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 20px;
     color: white;
     background: #00a6a6;
     border-radius: 15px;
     border: 3px solid #00a6a6;
-    margin-top: 4%;
-    margin-right: 30%;
   }
-  .book_btn:hover {
-    padding: 4px 16px;
+  .signup_btn:hover {
+    margin: 4% 2%;
+    padding: 6px 33px;
     text-align: center;
     display: inline-block;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 20px;
     color: black;
     background: #fefae7;
     border-radius: 15px;
     border: 3px solid #00a6a6;
-    margin-top: 4%;
-    margin-right: 30%;
   }
-  .landing-page {
+  .signup {
+    border: 1px solid #621814;
+    border-radius: 10px;
+    background-color: #FEFAE7;
+    margin-top: 10px; 
+  }
+  
+  .signup-page {
     background-color: #fefae7;
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,27 +55,20 @@
     margin-bottom: 3%;
     font-family: "Fredoka";
   }
-  .slogan {
+  .hello {
     color: #621814;
-    font-weight: 900;
-    font-size: 80px;
+    font-weight: bold;
+    font-size: 82px;
   }
-  .welcome {
+  .lets {
     color: #885855;
     font-size: 40px;
-  }
-  br {
-    display: block;
-    margin-top: 0;
   }
   span {
     display: block;
     line-height: 100%;
     text-align: center;
   }
-  .desc {
-    text-align: justify;
-    width: 400px;
-    margin: 0 auto;
-    font-weight: 400;
+  .to_login {
+    color: #8D93AB;
   }
