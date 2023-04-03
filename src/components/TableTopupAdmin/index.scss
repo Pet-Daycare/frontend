@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+  text-align: center;
+}
+tr {
+    border-bottom: 1px solid #C3C3C3;
+}
+td {
+    text-align: center;
+}
+.username{
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.time-date {
+    font-weight: 600;
+    color: #C3C3C3;
+    margin-bottom: 5px;
+}
+.status {
+    font-weight: 600;
+}
+.detail-button {
+    color: white;
+    font-weight: 600;
+    padding: 3px 12px;
+    background: #007D7D;
+    border-radius: 15px;
+    border: 2px solid #007D7D;
+}
+.detail-button:hover {
+    color: black;
+    font-weight: 600;
+    padding: 3px 12px;
+    background: white;
+    border-radius: 15px;
+    border: 2px solid #007D7D;
+}

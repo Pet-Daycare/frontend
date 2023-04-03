@@ -24,7 +24,7 @@ import LogOut from '../../assets/log-out.svg';
 
 function NavigationAdmin({activeSelect}) {
 
-    // JIKA TIDAAK MENGAKTIFKAN MAKA set Active Select = FALSE
+    // JIKA TIDAK MENGAKTIFKAN MAKA set Active Select = FALSE
 
 
   return (
@@ -55,7 +55,7 @@ function NavigationAdmin({activeSelect}) {
                 <img  src={activeSelect == "TRANSAKSI"? TransaksiActive : TransaksiDisable}/>
                 <p>Transaksi</p>
             </Link>
-            <Link to='/top-up'className={`d-flex ${activeSelect == "TOPUP"? "active-toggle" : ""}`}>
+            <Link to='/admin/top-up'className={`d-flex ${activeSelect == "TOPUP"? "active-toggle" : ""}`}>
                 <img src={activeSelect == "TOPUP"? TopUpActive : TopUpDisable}/>
                 <p>Top Up</p>
             </Link>
