@@ -28,18 +28,6 @@ function App() {
 
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<SignUp/>} />
-          {/* tar delete */}
-          <Route path="dashboard" element={<DashboardUser/>} />
-          <Route path="dashboard/book-reservation" element={<BookReservation/>} />
-            <Route path="dashboard/topup" element={<TopUpWallet/>} />
-            <Route path="dashboard/edit" element={<ChangeDate/>} />
-            <Route path="dashboard/payment" element={<Payment/>} />
-            <Route path="detail-transaction" element={<DetailTransactionCustomer/>} />
-          <Route path="admin/"element={<DashboardAdmin/>} />
-            <Route path="admin/daftar-penitipan"element={<DaftarPenitipanAdmin/>} />
-            <Route path="admin/transaksi"element={<TransaksiAdmin/>} />
-            <Route path="admin/top-up"element={<TopUpAdmin/>} />
-            <Route path="admin/tambah-penitipan"element={<AddPenitipanByAdmin/>} />
          
           <Route element = {<PrivateRoutesCustomer/>}>
             <Route path="dashboard" element={<DashboardUser/>} />
