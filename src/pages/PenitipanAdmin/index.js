@@ -32,6 +32,8 @@ function DaftarPenitipanAdmin() {
             </a>
           </li>
         </ul>
+
+        <hr/>
         <div className="table-penitipan">
           <TablePenitipanAdmin />
         </div>

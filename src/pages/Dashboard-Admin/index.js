@@ -6,16 +6,16 @@ import ImageHeadLine from "../../assets/image-people.svg";
 import Barchart from "../../assets/bar-chart-2.svg";
 import CheckCircle from "../../assets/check-circle.svg";
 import HeaderAdmin from "../../components/HeaderAdmin";
+import TablePengambilanAdmin from "../../components/TablePengambilanAdmin";
 
 function DashboardAdmin() {
-  
   return (
     <div className="row">
       <div className="col-3">
         <NavigationAdmin activeSelect="DASHBOARD" />
       </div>
       <div className="col-9 main-dash-admin">
-        <HeaderAdmin/>
+        <HeaderAdmin />
 
         <div className="row welcome-admin-tag">
           <div className="col-6 tag-decs">
@@ -48,6 +48,15 @@ function DashboardAdmin() {
             </div>
           </div>
         </div>
+
+        <div className="pengambilan">
+          <h3 className="title-admin title-pengambilan">
+            Pengambilan hari ini
+          </h3>
+          <hr />
+        </div>
+
+        <TablePengambilanAdmin />
       </div>
     </div>
   );

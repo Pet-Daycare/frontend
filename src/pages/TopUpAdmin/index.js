@@ -1,6 +1,7 @@
-import React from 'react'
-import NavigationAdmin from '../../components/NavigationAdmin'
-import HeaderAdmin from '../../components/HeaderAdmin'
+import React from "react";
+import NavigationAdmin from "../../components/NavigationAdmin";
+import HeaderAdmin from "../../components/HeaderAdmin";
+import TableTopupAdmin from "../../components/TableTopupAdmin";
 
 function TopUpAdmin() {
   return (
@@ -9,10 +10,15 @@ function TopUpAdmin() {
         <NavigationAdmin activeSelect="TOPUP" />
       </div>
       <div className="col-9 main-dash-admin">
-        <HeaderAdmin/>
+        <HeaderAdmin />
+
+        <h3 className="title-admin">Top Up</h3>
+        <hr />
+
+        <TableTopupAdmin />
       </div>
     </div>
-  )
+  );
 }
 
-export default TopUpAdmin
+export default TopUpAdmin;
