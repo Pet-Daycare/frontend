@@ -5,6 +5,8 @@ import TransaksiIcon from '../../assets/transaksi-disable.svg';
 import HistoryTransaksiIcon from '../../assets/Wallet-disable.svg';
 import { Link } from 'react-router-dom';
 
+import LogOut from "../../assets/log-out.svg";
+
 import './index.scss';
 
 function NavigationCustomer() {
@@ -32,7 +34,12 @@ function NavigationCustomer() {
                 <img src={HistoryTransaksiIcon}/>
                 <p>History Transaction</p>
             </Link>
+            <Link to="/" className='d-flex justify-content-between '>
+          <     img src={LogOut} />
+                <p>Log Out</p>
+            </Link>
         </div>
+        
     </div>
   )
 }

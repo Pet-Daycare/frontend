@@ -23,18 +23,19 @@ function SignUp() {
     } else if (password1 != password2) {
       alert("Password anda tidak sama!");
     } else {
-      let firstName = arrString[0];
-      let lastName = arrString[arrString.length - 1];
 
+      console.log(password1)
+      console.log(email)
+      console.log(username)
       try {
-        await axios.post("http://localhost:8080/api/v1/auth/register", {
-          firstName: firstName,
-          lastName: lastName,
+        let request = await axios.post("http://localhost:8080/api/v1/auth/register", {
           password: password1,
           email: email,
+          fullname: fullname,
           username: username,
           role: "USER",
         });
+        console.log(request);
         alert("Register Successfully");
         navigate("/login");
       } catch (err) {
