@@ -13,8 +13,9 @@ function Login() {
   // TODO : POST ke bacekend dan token dan role di set di window
   async function handleSubmit(event) {
     // TODO: LOGIC
-    if (username == "ADMIN") {
+    if (username === "ADMIN") {
       window.localStorage.setItem("token", "323243234");
+      window.localStorage.setItem("username", "Admin");
       window.localStorage.setItem("role", "ADMIN");
       navigate("/dashboard");
       // } else if (username == "CUSTOMER") {
@@ -36,10 +37,14 @@ function Login() {
             password: password,
           }
         );
+
+        
+        console.log(response);
         // console.log(response.data["token"]);
 
         window.localStorage.setItem("role", "CUSTOMER");
         window.localStorage.setItem("token", response.data["token"]);
+        window.localStorage.setItem("username", username);
 
         console.log(window.localStorage.getItem("token"));
         console.log(window.localStorage.getItem("role"));
