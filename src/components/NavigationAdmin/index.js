@@ -18,32 +18,24 @@ import TransaksiDisable from "../../assets/transaction-disable.svg";
 import TopUpActive from "../../assets/wallet-active.svg";
 import TopUpDisable from "../../assets/Wallet-disable.svg";
 
-import LogOut from "../../assets/log-out.svg";
-import axios from "axios";
 
 function NavigationAdmin({ activeSelect }) {
   const navigate = useNavigate();
 
-  // async function handleLogout() {
-  //   let token = window.localStorage.getItem("token");
-  //   console.log(token);
+  async function handleLogout(e) {
+    try {
 
-  //   let link = "http://localhost:8080/api/v1/auth/logout/" + token;
-  //   console.log(link);
-  //   try {
-  //     await axios.post(link);
+      window.localStorage.clear();
 
-  //     window.localStorage.clear();
+      console.log(window.localStorage.getItem("token"));
 
-  //     console.log(window.localStorage.getItem("token"));
+      alert("Logout Successful");
 
-  //     alert("Logout Successful");
-
-  //     navigate("/");
-  //   } catch (e) {
-  //     alert("Something Happened");
-  //   }
-  // }
+      navigate("/");
+    } catch (e) {
+      alert("Something Happened");
+    }
+  }
 
   // JIKA TIDAK MENGAKTIFKAN MAKA set Active Select = FALSE
   return (
@@ -111,14 +103,11 @@ function NavigationAdmin({ activeSelect }) {
       </div>
 
       <hr />
+      <br></br>
+      <br></br>
+      <br></br>
+      <button class="logout_btn" style = {{  marginLeft: "25%", marginRight: "25%", width: "50%", textAlign: "center"}}  onClick={handleLogout}>Logout</button>
 
-      <div className="log-out mx-auto">
-        {/* <Link onCLick={handleLogout} className="d-flex"> */}
-        <Link to="/" className="d-flex">
-          <img src={LogOut} />
-          <p>Log Out</p>
-        </Link>
-      </div>
     </div>
   );
 }

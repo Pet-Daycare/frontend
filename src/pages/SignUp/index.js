@@ -31,7 +31,7 @@ function SignUp() {
         let request = await axios.post("http://localhost:8080/api/v1/auth/register", {
           password: password1,
           email: email,
-          fullname: fullname,
+          fullName: fullname,
           username: username,
           role: "USER",
         });

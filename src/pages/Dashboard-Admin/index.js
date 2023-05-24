@@ -19,7 +19,7 @@ function DashboardAdmin() {
 
         <div className="row welcome-admin-tag">
           <div className="col-6 tag-decs">
-            <h3>Hi Joey</h3>
+            <h3>Hi Admin!</h3>
             <p>
               We're excited to have you here as an administrator of our pet care
               services.
