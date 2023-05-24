@@ -5,10 +5,16 @@ import './index.css'
 import HeaderLogout from '../../components/HeaderLogout'
 import { useNavigate } from "react-router-dom";
 
+import DanaLogo from '../../assets/dana_logo.png';
+import GopayLogo from '../../assets/gopay_logo.ng.png';
+import QrisLogo from '../../assets/qris_logo.png';
+import BcaTransfer from '../../assets/bca_logo.png';
+import MandiriTransfer from '../../assets/mandiri_logo.svg.png';
+
 function TopUp() {
   const navigate = useNavigate();
   const [nominal, setNominal] = useState();
-
+  const [method, setMethod] = useState();
   const [data, loadData] = useState("");
 
   const username = window.localStorage.getItem("username");
@@ -32,17 +38,44 @@ function TopUp() {
     dataRes();
   }, []);
 
+  const option = (type, urlLogo) => {
+    return <div className={method == type ? 'option-active': 'option'} onClick={() => setMethod(type)}>
+      <img className=""
+       src={urlLogo}/>
+      <p>{type}</p>
+    </div>
+  }
 
   async function handleSubmit (e) {
     // TODO: LOGIC
     console.log(nominal)
+
+    switch(method) {
+      case "Dana":
+        setMethod("DANA")
+        break;
+      case "Gopay":
+        setMethod("GOPAY")
+        break;
+      case "Qris":
+        setMethod("QRIS")
+        break;
+      case "Mandiri Bank Transfer":
+        setMethod("MANDIRI_BANK_TRANSFER")
+        break;
+      case "BCA Bank Transfe":
+        setMethod("BCA_BANK_TRANSFER")
+        break;
+    }
+
+    let m = method
 
     let response = await axios.post(
       "http://localhost:8081/api/customer/topup/create",
       {
         "username": username,
         token: token,
-        "typeMethod": "OVO_TRANSFER",
+        "typeMethod": m.toUpperCase(),
         "nominal": nominal
       }
     ).catch((err) => alert(err));
@@ -68,7 +101,16 @@ function TopUp() {
                 <p>Your balance</p>
                 <p>{data.balance}</p>
             </div>
-
+            <div className="">
+            <p>Select a payment method</p>
+              <div className="">
+                {option("Dana", DanaLogo)}
+                {option("Gopay", GopayLogo)}
+                {option("Qris", QrisLogo)}
+                {option("Mandiri Bank Transfer", MandiriTransfer)}
+                {option("BCA Bank Transfer", BcaTransfer)}
+              </div>
+            </div>
             <form className='text-decs' >
                 <label className='label_custom'>
                     Enter nominal
@@ -93,6 +135,9 @@ function TopUp() {
           </div>
         </div>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     </div>
   )

@@ -100,6 +100,21 @@ function NavigationAdmin({ activeSelect }) {
           <img src={activeSelect == "TOPUP" ? TopUpActive : TopUpDisable} />
           <p>Top Up</p>
         </Link>
+        <Link
+          to="/admin/voucher"
+          className={`d-flex ${activeSelect == "VOUCHER" ? "active-toggle" : ""}`}
+        >
+          <img src={activeSelect == "VOUCHER" ? TopUpActive : TopUpDisable} />
+          <p>Add Voucher</p>
+        </Link>
+        
+        <Link
+          to="/admin/coupon"
+          className={`d-flex ${activeSelect == "COUPON" ? "active-toggle" : ""}`}
+        >
+          <img src={activeSelect == "COUPON" ? TopUpActive : TopUpDisable} />
+          <p>Add Coupon</p>
+        </Link>
       </div>
 
       <hr />

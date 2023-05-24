@@ -13,7 +13,7 @@ import axios from "axios";
 
 import './index.scss';
 
-function NavigationCustomer() {
+function NavigationCustomer({activeSelect}) {
     
   const navigate = useNavigate();
 
@@ -64,15 +64,16 @@ function NavigationCustomer() {
         <div className='toggle-nav'>
             <Link to='/dashboard' className='d-flex justify-content-between'>
                 <img src={DashboardActiveIcon}/>
-                <p className='active-nav-btn'>Dashboard</p>
+                <p className= {`${activeSelect == "DASHBOARD" ? "active-nav-btn" : ""}`}>Dashboard</p>
             </Link>
-            <Link to='/dashboard'  className='d-flex justify-content-between '>
+            {/* <Link to='/dashboard/transaksi'  className='d-flex justify-content-between '> */}
+            <Link to='/dashboard/transaksi'  className='d-flex justify-content-between'>
                 <img src={TransaksiIcon}/>
-                <p>Transaksi</p>
+                <p className= {`${activeSelect == "TRANSAKSI" ? "active-nav-btn" : ""}`}>Transaksi</p>
             </Link>
-            <Link to='/dashboard' className='d-flex justify-content-between '>
+            <Link to='/dashboard/history-topup' className='d-flex justify-content-between '>
                 <img src={HistoryTransaksiIcon}/>
-                <p>History Transaction</p>
+                <p className= {`${activeSelect == "TOPUP" ? "active-nav-btn" : ""}`}>History Topup</p>
             </Link>
             {/* <Link onCLick={handleLogout} className="d-flex justify-content-between ">
                 <img src={LogOut} />

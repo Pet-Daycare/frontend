@@ -1,59 +1,88 @@
+
 .head-text{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 80px;
-    line-height: 97px;
-    text-align: center;
-    color: #621814;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 97px;
+  text-align: center;
+  color: #621814;
 }
 .topup-page {
-    height: 100vh;
-    background-color: #fefae7;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+  height: 100vh;
+  background-color: #fefae7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 .container-topup{
-    min-width: 360px;
+  min-width: 360px;
 }
 
 .text-decs{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    color: #621814;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #621814;
 }
 
 .input{
-    border: 1px solid #621814;
-    border-radius: 10px;
-    background-color: #FEFAE7;
-    width: 100%;
+  border: 1px solid #621814;
+  border-radius: 10px;
+  background-color: #FEFAE7;
+  width: 100%;
 }
 .topup_btn {
-    padding: 4px 16px;
-    text-align: center;
-    display: inline-block;
-    font-size: 17px;
-    font-weight: 500;
-    color: white;
-    background: #F08700;
-    border-radius: 15px;
-    border: 3px solid #F08700;
-    margin-top: 4%;
-    margin-right: 30%;
-  }
-  .topup_btn:hover {
-    padding: 4px 16px;
-    text-align: center;
-    display: inline-block;
-    font-size: 17px;
-    font-weight: 500;
-    color: black;
-    background: #fefae7;
-    border-radius: 15px;
-    border: 3px solid #F08700;
-    margin-top: 4%;
-    margin-right: 30%;
-  }
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  background: #F08700;
+  border-radius: 15px;
+  border: 3px solid #F08700;
+  margin-top: 4%;
+  margin-right: 30%;
+}
+.topup_btn:hover {
+  padding: 4px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  color: black;
+  background: #fefae7;
+  border-radius: 15px;
+  border: 3px solid #F08700;
+  margin-top: 4%;
+  margin-right: 30%;
+}
+
+.option{
+  margin: 10px;
+  text-align: center;
+  padding-top: auto;
+  border: 3px solid #621814;
+  border-radius: 15px;
+}
+
+.option-active{
+  margin: 10px;
+  text-align: center;
+  padding-top: auto;
+  border: 3px solid #621814;
+  border-radius: 15px;
+  background-color: #621814;
+  color: white;
+}
+
+.option-active img{
+  margin-top: 10px;
+  height: 25px;
+}
+
+.option img{
+  margin-top: 10px;
+  height: 25px;
+}

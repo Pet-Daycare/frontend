@@ -1,13 +1,14 @@
 import React from 'react'
-import './index.css'
+import './index.scss'
 import HeaderDashboard from '../../components/HeaderDashboard'
 import NavigationCustomer from '../../components/Navigation_Customer'
 import WelcomeHeadCustomerDasboard from '../../components/WelcomeHeadCustomerDasboard'
 import CardBalance from '../../components/CardBalanceCustomer';
 import TableInCustomer from '../../components/TableInCustomer';
+import TopUp from '../TopUpWallet'
 
 
-function Dashboard() {
+function TopUpHistoryCustomer() {
   const empty = () => {
     return (
       <p className='d-flex justify-content-center empty-text'>
@@ -37,7 +38,7 @@ function Dashboard() {
     <div className='main-dashboard'>
       <HeaderDashboard />
       <div className='row'>
-        <div className='col-3'><NavigationCustomer activeSelect="DASHBOARD"/></div>
+        <div className='col-3'><NavigationCustomer activeSelect="TOPUP"/></div>
         <div className='col-9 p-5'>
           <WelcomeHeadCustomerDasboard/>
           <hr/>
@@ -50,4 +51,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default TopUpHistoryCustomer
