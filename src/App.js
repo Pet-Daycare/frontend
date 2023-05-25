@@ -36,6 +36,7 @@ function App() {
           <Route element = {<PrivateRoutesCustomer/>}>
             <Route path="dashboard" element={<DashboardUser/>} />
             <Route path="dashboard/book-reservation" element={<BookReservation/>} />
+            <Route path="dashboard/book-reservation/payment" element={<Payment/>} />
             <Route path="dashboard/topup" element={<TopUpWallet/>} />
             <Route path="dashboard/edit" element={<ChangeDate/>} />
             <Route path="dashboard/payment" element={<Payment/>} />

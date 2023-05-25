@@ -44,12 +44,12 @@ function NavigationAdmin({ activeSelect }) {
         <img src={LogoPetDayCare} alt="logo-pet-day-care" />
       </div>
 
-      <div className="btn-penitipan">
+      {/* <div className="btn-penitipan">
         <p>Buat Penitipan</p>
         <Link to="/admin/tambah-penitipan">
           <img src={AddPenitipanAdmin} />
         </Link>
-      </div>
+      </div> */}
 
       <hr />
       <div className="toggle-nav-ad">

@@ -72,10 +72,14 @@ function BookReservation() {
       }
     ).catch((err) => alert(err));
 
-    
+    window.localStorage.setItem("penitipanId", response.data.id)
+
+    console.log(localStorage.getItem("penitipanId"))
+
+
     console.log(response);
-    alert("Reservation successful! Please wait for admin verification..")
-    navigate('/dashboard')
+    // alert("Reservation successful! Please wait for admin verification..")
+    navigate('./payment')
   }
 
   const handleCancel = (e) => {

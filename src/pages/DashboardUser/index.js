@@ -16,9 +16,11 @@ function Dashboard() {
 
   const username = window.localStorage.getItem("username");
   const token = window.localStorage.getItem("token");
+  const id = window.localStorage.getItem("id");
 
   console.log(username);
   console.log(token);
+  console.log(id);
 
 
   useEffect(() => {
@@ -29,9 +31,13 @@ function Dashboard() {
             token: token
           } 
       }
-    ).then((data) => loadData(data.data))
+    )
     .catch((err) => alert(err));
-      console.log(data);
+    loadData(response.data)
+      console.log(response);
+      window.localStorage.setItem("id", response.data.customerId);
+      window.localStorage.setItem("balance", response.data.balance);
+      console.log(window.localStorage.getItem("id"))
     };
     //s
     dataRes();
