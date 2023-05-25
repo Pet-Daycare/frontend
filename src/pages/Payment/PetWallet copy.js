@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-function PetWallet({balance, totalPembayaran}) {
+function PetWallet({ balance, totalPembayaran }) {
   return (
     <div className="PetWallet-page">
       <div className="d-flex justify-content-between">

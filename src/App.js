@@ -6,7 +6,6 @@ import LandingPage from './pages/LandingPage';
 import DashboardUser from './pages/DashboardUser'
 import BookReservation from './pages/BookReservation';
 import TopUpWallet from './pages/TopUpWallet'
-import DetailTransactionCustomer from './pages/DetailTransactionCustomer';
 import DashboardAdmin from './pages/Dashboard-Admin';
 import DaftarPenitipanAdmin from './pages/PenitipanAdmin';
 import TransaksiAdmin from './pages/TransaksiAdmin';
@@ -19,6 +18,11 @@ import Payment from './pages/Payment';
 
 import PrivateRoutesAdmin from './routes/PrivateRoutesAdmin';
 import PrivateRoutesCustomer from './routes/PrivateRoutesCustomer';
+import TopUpHistoryCustomer from './pages/TopUpHistoryCustomer';
+import TransaksiCustomer from './pages/TransaksiCustomer';
+import CouponFrontend from './pages/Coupon';
+import VoucherFrontend from './pages/Voucher';
+import BookReservationAdmin from './pages/BookReservationAdmin';
 
 function App() {
   return (
@@ -32,9 +36,14 @@ function App() {
           <Route element = {<PrivateRoutesCustomer/>}>
             <Route path="dashboard" element={<DashboardUser/>} />
             <Route path="dashboard/book-reservation" element={<BookReservation/>} />
+            <Route path="dashboard/book-reservation/payment" element={<Payment/>} />
             <Route path="dashboard/topup" element={<TopUpWallet/>} />
             <Route path="dashboard/edit" element={<ChangeDate/>} />
             <Route path="dashboard/payment" element={<Payment/>} />
+            <Route path="dashboard/transaksi/book-reservation" element={<BookReservation/>} />
+            <Route path="dashboard/payment/book-reservation" element={<BookReservation/>} />
+            <Route path="dashboard/transaksi" element={<TransaksiCustomer/>} />
+            <Route path="dashboard/history-topup" element={<TopUpHistoryCustomer/>} />
             {/* <Route path="detail-transaction" element={<DetailTransactionCustomer/>} /> */}
           </Route>
 
@@ -44,7 +53,9 @@ function App() {
             <Route path="admin/daftar-penitipan"element={<DaftarPenitipanAdmin/>} />
             <Route path="admin/transaksi"element={<TransaksiAdmin/>} />
             <Route path="admin/top-up"element={<TopUpAdmin/>} />
-            <Route path="admin/tambah-penitipan"element={<AddPenitipanByAdmin/>} />
+            <Route path="admin/tambah-penitipan"element={<BookReservationAdmin/>} />
+            <Route path="admin/voucher"element={<VoucherFrontend/>} />
+            <Route path="admin/coupon"element={<CouponFrontend/>} />
           </Route>
 
         </Routes>

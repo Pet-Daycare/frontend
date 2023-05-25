@@ -19,7 +19,7 @@ function DashboardAdmin() {
 
         <div className="row welcome-admin-tag">
           <div className="col-6 tag-decs">
-            <h3>Hi Joey</h3>
+            <h3>Hi Admin!</h3>
             <p>
               We're excited to have you here as an administrator of our pet care
               services.
@@ -28,7 +28,7 @@ function DashboardAdmin() {
           <img className="col-6" src={ImageHeadLine} />
         </div>
 
-        <div className="row info-panel ">
+        {/* <div className="row info-panel ">
           <div className="col-6 ">
             <div className="orange-col d-flex">
               <img src={Barchart} />
@@ -47,16 +47,16 @@ function DashboardAdmin() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="pengambilan">
+        {/* <div className="pengambilan">
           <h3 className="title-admin title-pengambilan">
             Pengambilan hari ini
           </h3>
           <hr />
         </div>
 
-        <TablePengambilanAdmin />
+        <TablePengambilanAdmin /> */}
       </div>
     </div>
   );

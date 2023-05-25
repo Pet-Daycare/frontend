@@ -1,0 +1,81 @@
+.history-tp-pg{
+    background-color: #FEFAE7;
+
+    .main{
+        padding: 5rem;
+
+        
+    }
+}   
+
+.main-dash-admin{
+    padding: 3.5rem;
+
+    .welcome-admin-tag{
+        margin-top: 3.5rem;
+        background: #99DBDB;
+        border-radius: 20px;
+        max-height: 280px;
+        overflow: visible;
+        img{
+            height: 310px;
+            position: relative;
+            top: -40px;
+        }
+
+        .tag-decs{
+            margin: auto;
+            padding-left: 3rem;
+            h3{
+                font-family: 'Times';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 60px;
+                line-height: 69px;
+            }
+            p{
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .info-panel{
+        margin-top: 30px;
+
+        img{
+            height: 60px;
+            margin-right: 20px;
+        }
+
+         h3{
+            margin: 0;
+            font-weight: 700;
+            font-size: 30px;
+         }
+         p{
+            margin: 0;
+            font-weight: 400;
+            font-size: 15px;
+         }
+        .orange-col{
+            background: #F5DF6B;
+            border-radius: 15px;
+            padding: 20px;
+
+        }
+        .yellow-col{
+            background: #F6B766;
+            border-radius: 15px;
+            padding: 20px;
+            
+        }
+    }
+}
+.title-pengambilan {
+    font-size: 20px;
+}
+.pengambilan {
+    margin-top: 6%;
+}

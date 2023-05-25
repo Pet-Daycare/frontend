@@ -6,7 +6,7 @@ import axios from "axios";
 
 import HeaderLogout from '../../components/HeaderLogout'
 
-function BookReservation() {
+function BookReservationAdmin() {
   const navigate = useNavigate();
 
   const [petName, setPetName] = useState("");
@@ -15,29 +15,13 @@ function BookReservation() {
   const [message, setMessage] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [username, setUsername] = useState("");
 
   const [data, loadData] = useState("");
 
-  const username = window.localStorage.getItem("username");
-  const token = window.localStorage.getItem("token");
 
   // console.log(username);
   // console.log(token);
-
-  useEffect(() => {
-    const dataRes = async () => {
-      let response = await axios.get("http://localhost:8081/api/customer/frontend", { 
-        params: 
-          { username: username, 
-            token: token
-          } 
-      }
-    ).then((data) => loadData(data.data))
-    .catch((err) => alert(err));
-      console.log(data);
-    };
-    dataRes();
-  }, []);
 
   async function handleSubmit (e) {
     // TODO: LOGIC
@@ -49,10 +33,7 @@ function BookReservation() {
     console.log(message);
     console.log(startDate+"T14:00:00.000");
     console.log(endDate+"T15:00:00.000");
-    console.log(token)
 
-    console.log(data.username)
-    console.log(data.id)
 
     let tanggalTitip = startDate+"T00:00:00.000"
     let tanggalPengambilan = endDate+"T15:00:00.000"
@@ -67,19 +48,14 @@ function BookReservation() {
         pesanPenitipan: message,
         tanggalPenitipan: tanggalTitip,
         tanggalPengambilan: tanggalPengambilan,
-        userId: data.id,
-        username: data.username
+        username: username
       }
     ).catch((err) => alert(err));
 
-    window.localStorage.setItem("penitipanId", response.data.id)
-
-    console.log(localStorage.getItem("penitipanId"))
-
-
+    
     console.log(response);
-    // alert("Reservation successful! Please wait for admin verification..")
-    navigate('./payment')
+    alert("Reservation successful! Please wait for admin verification..")
+    navigate('/dashboard')
   }
 
   const handleCancel = (e) => {
@@ -158,6 +134,17 @@ function BookReservation() {
               ></input>
             </td>
           </tr>
+          <td class="form">
+            </td>
+          <td class="form">
+              <label>Nama User</label>
+              <input
+                type="text"
+                class="form-control book"
+                id="pet_name"
+                onChange={(e) => setUsername(e.target.value)}
+              ></input>
+            </td>
         </table>
 
         <div class="row justify-content-end button_group">
@@ -174,4 +161,4 @@ function BookReservation() {
   );
 }
 
-export default BookReservation;
+export default BookReservationAdmin;

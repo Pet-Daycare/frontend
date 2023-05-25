@@ -6,7 +6,7 @@ tr {
     border-bottom: 1px solid #C3C3C3;
 }
 td {
-    text-align: center;
+    text-align: left;
 }
 .username{
   font-weight: bold;
@@ -29,6 +29,13 @@ td {
     background: #007D7D;
     border-radius: 15px;
     border: 2px solid #007D7D;
+}
+.detail-button-verified {
+    color: black;
+    font-weight: 600;
+    padding: 3px 12px;
+    background: #06cd8e;
+    border-radius: 15px;
 }
 .detail-button:hover {
     color: black;
