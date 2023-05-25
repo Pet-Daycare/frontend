@@ -40,10 +40,7 @@ function TopUpHistoryCustomer() {
       <div className='row'>
         <div className='col-3'><NavigationCustomer activeSelect="TOPUP"/></div>
         <div className='col-9 p-5'>
-          <WelcomeHeadCustomerDasboard/>
-          <hr/>
-          <CardBalance/>
-          <TableInCustomer className='p-2'/>
+          {/* <TableInCustomer className='p-2'/> */}
         </div>
       </div>
 

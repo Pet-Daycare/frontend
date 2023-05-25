@@ -28,7 +28,11 @@ function SignUp() {
       console.log(email)
       console.log(username)
       try {
-        let request = await axios.post("http://localhost:8080/api/v1/auth/register", {
+        let url = "http://localhost:8080/api/v1/auth/register";
+        
+        // let url = "https://34.172.96.175/api/v1/auth/register/verify-token/" + "isajdias21313";
+        
+        let request = await axios.post(url, {
           password: password1,
           email: email,
           fullName: fullname,

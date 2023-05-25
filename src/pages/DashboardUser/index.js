@@ -1,13 +1,42 @@
-import React from 'react'
+
 import './index.css'
 import HeaderDashboard from '../../components/HeaderDashboard'
 import NavigationCustomer from '../../components/Navigation_Customer'
 import WelcomeHeadCustomerDasboard from '../../components/WelcomeHeadCustomerDasboard'
 import CardBalance from '../../components/CardBalanceCustomer';
 import TableInCustomer from '../../components/TableInCustomer';
+import React, { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
+
 
 
 function Dashboard() {
+  const [data, loadData] = useState("");
+
+  const username = window.localStorage.getItem("username");
+  const token = window.localStorage.getItem("token");
+
+  console.log(username);
+  console.log(token);
+
+
+  useEffect(() => {
+    const dataRes = async () => {
+      let response = await axios.get("http://localhost:8081/api/customer/frontend", { 
+        params: 
+          { username: username, 
+            token: token
+          } 
+      }
+    ).then((data) => loadData(data.data))
+    .catch((err) => alert(err));
+      console.log(data);
+    };
+    //s
+    dataRes();
+  }, []);
+
   const empty = () => {
     return (
       <p className='d-flex justify-content-center empty-text'>
@@ -42,7 +71,7 @@ function Dashboard() {
           <WelcomeHeadCustomerDasboard/>
           <hr/>
           <CardBalance/>
-          <TableInCustomer className='p-2'/>
+          {/* <TableInCustomer id={data.id} className='p-2'/> */}
         </div>
       </div>
 
