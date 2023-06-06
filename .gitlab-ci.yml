@@ -16,7 +16,6 @@ deploy_production:
   only:
     - master
     - post-sprint-revision
-
   script:
     - npm install --global vercel
     - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
