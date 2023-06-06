@@ -23,7 +23,7 @@ function CouponFrontend() {
     
         
         console.log(response);
-        alert("Add " + response.data.discount +"% coupon successful! The code is" + response.data.code)
+        alert("Add " + response.data.discount +"% coupon successful! The code is " + response.data.code)
       }
 
   return (

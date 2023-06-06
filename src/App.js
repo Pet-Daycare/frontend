@@ -39,7 +39,7 @@ function App() {
             <Route path="dashboard/book-reservation/payment" element={<Payment/>} />
             <Route path="dashboard/topup" element={<TopUpWallet/>} />
             <Route path="dashboard/edit" element={<ChangeDate/>} />
-            <Route path="dashboard/payment" element={<Payment/>} />
+            <Route path="dashboard/transaksi/book-reservation/payment" element={<Payment/>} />
             <Route path="dashboard/transaksi/book-reservation" element={<BookReservation/>} />
             <Route path="dashboard/payment/book-reservation" element={<BookReservation/>} />
             <Route path="dashboard/transaksi" element={<TransaksiCustomer/>} />

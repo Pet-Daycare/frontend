@@ -17,6 +17,7 @@ function BookReservation() {
   const [endDate, setEndDate] = useState("");
 
   const [data, loadData] = useState("");
+  const [penitipan, setPenitipan] = useState(null);
 
   const username = window.localStorage.getItem("username");
   const token = window.localStorage.getItem("token");
@@ -68,10 +69,12 @@ function BookReservation() {
         tanggalPenitipan: tanggalTitip,
         tanggalPengambilan: tanggalPengambilan,
         userId: data.id,
-        username: data.username
+        username: data.username,
+        userToken: token
       }
     ).catch((err) => alert(err));
 
+    setPenitipan(response.data);
     window.localStorage.setItem("penitipanId", response.data.id)
 
     console.log(localStorage.getItem("penitipanId"))
@@ -79,7 +82,7 @@ function BookReservation() {
 
     console.log(response);
     // alert("Reservation successful! Please wait for admin verification..")
-    navigate('./payment')
+    navigate('./payment', { state: { penitipanData: response.data } });
   }
 
   const handleCancel = (e) => {

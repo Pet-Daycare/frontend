@@ -28,7 +28,7 @@ function VoucherFrontend() {
     
         
         console.log(response);
-        alert("Add Rp" + response.data.amount +",00 voucher successful! The code is" + response.data.code)
+        alert("Add Rp" + response.data.amount +",00 voucher successful! The code is " + response.data.code)
       }
 
   return (
