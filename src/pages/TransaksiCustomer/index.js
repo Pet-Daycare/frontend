@@ -26,7 +26,8 @@ function TransaksiCustomer() {
 
     const history = async () => {
       let response = await axios
-        .get("http://localhost:8082/api/v1/Penitipan/me/frontend", {
+        .get("http://34.142.203.183/api/v1/Penitipan/me/frontend", {
+          // .get("http://localhost:8082/api/v1/Penitipan/me/frontend", {
           params: {
             userId: myid,
           },

@@ -26,7 +26,7 @@ function Payment() {
 
   const username = window.localStorage.getItem("username");
   const token = window.localStorage.getItem("token");
-  
+
   const [balance, setBalance] = useState();
   // const [idPenitipan, setIdPenitipan] = useState();
   const [idPembayaran, setIdPembayaran] = useState();
@@ -37,8 +37,7 @@ function Payment() {
   const [totalPembayaran, setTotalpembayaran] = useState();
   const [idPenitipan, setIdPenitipan] = useState();
 
-  
-  let bal = window.localStorage.getItem("balance")
+  let bal = window.localStorage.getItem("balance");
   // let idPenitipan = window.localStorage.getItem("penitipanId")
   let total = 0;
 
@@ -50,8 +49,8 @@ function Payment() {
   const handlePay = async (e) => {
     e.preventDefault();
     try {
-      let code = ""
-      let sendMethod = ""
+      let code = "";
+      let sendMethod = "";
 
       if (method === "PetWallet") {
         sendMethod = "PET_WALLET";
@@ -72,16 +71,20 @@ function Payment() {
         code: code,
       };
 
-
-      console.log(payload)
+      console.log(payload);
 
       const response = await axios.post(
-        "http://localhost:8081/api/payment/customer/pay",
+        // "http://localhost:8081/api/payment/customer/pay",
+        "http://34.172.96.175/api/payment/customer/pay",
         payload
       );
 
       if (response.data.paid === true) {
-        alert("You've successfully made a payment with " + method + ". Please wait for admin to verify.");
+        alert(
+          "You've successfully made a payment with " +
+            method +
+            ". Please wait for admin to verify."
+        );
         navigate("/dashboard");
       } else {
         alert("Payment Failed. Please check your balance or code.");
@@ -102,22 +105,20 @@ function Payment() {
   const handleVoucherCodeChange = (e) => {
     setVoucherCode(e.target.value);
   };
-  let id = localStorage.getItem("penitipanId")
-
+  let id = localStorage.getItem("penitipanId");
 
   // get penitipan response
   useEffect(() => {
     const dataRes = async () => {
-    
-    loadData(penitipanData);
-    console.log(penitipanData);
-    setTotalpembayaran(penitipanData.initialCost);
-    setIdPenitipan(penitipanData.id);
-    // topup = response.data
-    console.log(penitipanData)
-  };
-  
-  console.log("test" + data);
+      loadData(penitipanData);
+      console.log(penitipanData);
+      setTotalpembayaran(penitipanData.initialCost);
+      setIdPenitipan(penitipanData.id);
+      // topup = response.data
+      console.log(penitipanData);
+    };
+
+    console.log("test" + data);
     dataRes();
     method === "PetWallet"
       ? setPetWalletContentVisible(true)
@@ -129,12 +130,9 @@ function Payment() {
       ? setPetWalletVoucherContentVisible(true)
       : setPetWalletVoucherContentVisible(false);
 
-
     if (totalPembayaran == null) {
       // getPaymentDetail();
     }
-    
-    
   }, [method]);
 
   const handleOnChange = (e) => {

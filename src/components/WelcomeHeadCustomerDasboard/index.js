@@ -12,19 +12,29 @@ function WelcomeHeadCustomerDasboard() {
   }, []);
 
   const getData = () => {
-    axios
-      .get(
-        "http://localhost:8080/api/v1/auth/verify-token/" +
-          window.localStorage.getItem("token")
-      )
-      .then((data) => loadData(data.data))
-      .catch((err) => alert(err));
+    // axios
+    //   .get(
+    //     "http://104.198.131.227/api/v1/auth/verify-token/" +
+    //       window.localStorage.getItem("token"),
+    //     {
+    //       headers: {
+    //         Authorization: "Bearer " + window.localStorage.getItem("token"),
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH",
+    //         "Access-Control-Allow-Credentials": "true",
+    //         "Access-Control-Max-Age": "1800",
+    //         "Access-Control-Allow-Headers": "content-type",
+    //       },
+    //     }
+    //   )
+    //   .then((data) => loadData(data.data))
+    //   .catch((err) => alert(err));
   };
 
   const name = data.username;
   return (
     <div className="welcome-head-cus-dash">
-      <h1>Hei, {name}</h1>
+      <h1>Hei, {window.localStorage.getItem("username")}</h1>
       <p>
         Welcome to the Pet Day Care customer dashboard! We're thrilled to have
         you as a valued client and member of our pet care family.

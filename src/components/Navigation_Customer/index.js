@@ -22,13 +22,19 @@ function NavigationCustomer({ activeSelect }) {
     let header = "Bearer " + token;
     console.log(header);
     // http://104.198.131.227/api/v1/auth/login
-    let link = "http://localhost:8080/api/v1/auth/logout/" + token;
-    // let link = "http://104.198.131.227/api/v1/auth/logout/" + token;
+    // let link = "http://localhost:8080/api/v1/auth/logout/" + token;
+    let link = "http://104.198.131.227/api/v1/auth/logout/" + token;
     console.log(link);
     try {
       let res = await axios.post(link, {
         headers: {
           Authorization: "Bearer " + token,
+          // "Content-Type": "application/json",
+          // "Content-Length": 0,
+          // Accept: "*/*",
+          // "Accept-Encoding": "gzip, deflate, br",
+          // Connection: "keep-alive",
+          // "User-Agent": "PostmanRuntime/7.29.2",
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH",
           "Access-Control-Allow-Credentials": "true",
@@ -39,13 +45,13 @@ function NavigationCustomer({ activeSelect }) {
 
       console.log(res);
 
-      window.localStorage.clear();
+      // window.localStorage.clear();
 
-      console.log(window.localStorage.getItem("token"));
+      // console.log(window.localStorage.getItem("token"));
 
       alert("Logout Successful");
 
-      navigate("/");
+      // navigate("/");
     } catch (e) {
       alert("Something Happened");
     }
