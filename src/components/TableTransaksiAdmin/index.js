@@ -28,7 +28,8 @@ function TableTransaksiAdmin() {
   useEffect(() => {
     const dataRes = async () => {
       let response = await axios
-        .get("http://localhost:8081/api/payment/admin/all-bills")
+        // .get("http://localhost:8081/api/payment/admin/all-bills")
+        .get("http://34.172.96.175/api/payment/admin/all-bills")
         .catch((err) => alert(err));
       console.log("--------------");
       console.log(response);

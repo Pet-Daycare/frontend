@@ -27,8 +27,8 @@ function SignUp() {
       console.log(email);
       console.log(username);
       try {
-        // let url = "http://104.198.131.227/api/v1/auth/register";
-        let url = "http://localhost:8080/api/v1/auth/register";
+        let url = "http://104.198.131.227/api/v1/auth/register";
+        // let url = "http://localhost:8080/api/v1/auth/register";
 
         // let url = "https://34.172.96.175/api/v1/auth/register/verify-token/" + "isajdias21313";
 

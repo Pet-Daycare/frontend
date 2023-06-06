@@ -17,7 +17,8 @@ function TopUpHistoryCustomer() {
 
     const history = async () => {
       let response = await axios
-        .get("http://localhost:8081/api/customer/detail/frontend", {
+        // .get("http://localhost:8081/api/customer/detail/frontend", {
+        .get("http://34.172.96.175/api/customer/detail/frontend", {
           params: {
             username: username,
           },

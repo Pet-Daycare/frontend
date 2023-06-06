@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
-import HeaderLogout from '../../components/HeaderLogout'
+import HeaderLogout from "../../components/HeaderLogout";
 
 function BookReservationAdmin() {
   const navigate = useNavigate();
@@ -19,50 +19,49 @@ function BookReservationAdmin() {
 
   const [data, loadData] = useState("");
 
-
   // console.log(username);
   // console.log(token);
 
-  async function handleSubmit (e) {
+  async function handleSubmit(e) {
     // TODO: LOGIC
 
-    let type = petType.toUpperCase()
-    console.log(petName)
+    let type = petType.toUpperCase();
+    console.log(petName);
     console.log(type);
     console.log(petWeight);
     console.log(message);
-    console.log(startDate+"T14:00:00.000");
-    console.log(endDate+"T15:00:00.000");
+    console.log(startDate + "T14:00:00.000");
+    console.log(endDate + "T15:00:00.000");
 
+    let tanggalTitip = startDate + "T00:00:00.000";
+    let tanggalPengambilan = endDate + "T15:00:00.000";
 
-    let tanggalTitip = startDate+"T00:00:00.000"
-    let tanggalPengambilan = endDate+"T15:00:00.000"
+    let response = await axios
+      .post(
+        // "http://localhost:8082/api/v1/Penitipan/create",
+        "http://34.142.203.183/api/v1/Penitipan/create",
+        {
+          namaHewan: petName,
+          tipeHewan: type,
+          beratHewan: petWeight,
+          pesanPenitipan: message,
+          tanggalPenitipan: tanggalTitip,
+          tanggalPengambilan: tanggalPengambilan,
+          username: username,
+        }
+      )
+      .catch((err) => alert(err));
 
-
-    let response = await axios.post(
-      "http://localhost:8082/api/v1/Penitipan/create",
-      {
-        namaHewan: petName,
-        tipeHewan: type,
-        beratHewan: petWeight,
-        pesanPenitipan: message,
-        tanggalPenitipan: tanggalTitip,
-        tanggalPengambilan: tanggalPengambilan,
-        username: username
-      }
-    ).catch((err) => alert(err));
-
-    
     console.log(response);
-    alert("Reservation successful! Please wait for admin verification..")
-    navigate('/dashboard')
+    alert("Reservation successful! Please wait for admin verification..");
+    navigate("/dashboard");
   }
 
   const handleCancel = (e) => {
     // TODO: LOGIC
 
-     navigate('/dashboard')
-  }
+    navigate("/dashboard");
+  };
   return (
     <div class="book-page">
       <HeaderLogout />
@@ -83,7 +82,11 @@ function BookReservationAdmin() {
             </td>
             <td class="form">
               <label>Pet's type</label>
-              <select onChange={(e) => setPetType(e.target.value)} class="form-select book" id="pet_type">
+              <select
+                onChange={(e) => setPetType(e.target.value)}
+                class="form-select book"
+                id="pet_type"
+              >
                 <option value="" disabled selected>
                   Select type
                 </option>
@@ -134,26 +137,29 @@ function BookReservationAdmin() {
               ></input>
             </td>
           </tr>
+          <td class="form"></td>
           <td class="form">
-            </td>
-          <td class="form">
-              <label>Nama User</label>
-              <input
-                type="text"
-                class="form-control book"
-                id="pet_name"
-                onChange={(e) => setUsername(e.target.value)}
-              ></input>
-            </td>
+            <label>Nama User</label>
+            <input
+              type="text"
+              class="form-control book"
+              id="pet_name"
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+          </td>
         </table>
 
         <div class="row justify-content-end button_group">
           <div class="col-2"></div>
           <div class="col-5">
-            <button class="cancel_btn" onClick={handleCancel}>Cancel</button>
+            <button class="cancel_btn" onClick={handleCancel}>
+              Cancel
+            </button>
           </div>
           <div class="col-5">
-            <button class="book_btn" onClick={handleSubmit}>Book reservation</button>
+            <button class="book_btn" onClick={handleSubmit}>
+              Book reservation
+            </button>
           </div>
         </div>
       </div>
