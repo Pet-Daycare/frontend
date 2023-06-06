@@ -21,7 +21,7 @@ function DaftarPenitipanAdmin() {
               All
             </button>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <a class="btn" href="#">
               Active
             </a>
@@ -30,10 +30,10 @@ function DaftarPenitipanAdmin() {
             <a class="btn" href="#">
               Overdue
             </a>
-          </li>
+          </li> */}
         </ul>
 
-        <hr/>
+        <hr />
         <div className="table-penitipan">
           <TablePenitipanAdmin />
         </div>

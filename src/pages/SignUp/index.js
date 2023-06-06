@@ -23,15 +23,15 @@ function SignUp() {
     } else if (password1 != password2) {
       alert("Password anda tidak sama!");
     } else {
-
-      console.log(password1)
-      console.log(email)
-      console.log(username)
+      console.log(password1);
+      console.log(email);
+      console.log(username);
       try {
+        // let url = "http://104.198.131.227/api/v1/auth/register";
         let url = "http://localhost:8080/api/v1/auth/register";
-        
+
         // let url = "https://34.172.96.175/api/v1/auth/register/verify-token/" + "isajdias21313";
-        
+
         let request = await axios.post(url, {
           password: password1,
           email: email,

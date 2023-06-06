@@ -1,7 +1,7 @@
-import React from 'react'
-import NavigationAdmin from '../../components/NavigationAdmin'
-import HeaderAdmin from '../../components/HeaderAdmin'
-import TableTransaksiAdmin from '../../components/TableTransaksiAdmin'
+import React from "react";
+import NavigationAdmin from "../../components/NavigationAdmin";
+import HeaderAdmin from "../../components/HeaderAdmin";
+import TableTransaksiAdmin from "../../components/TableTransaksiAdmin";
 
 function TransaksiAdmin() {
   return (
@@ -10,7 +10,7 @@ function TransaksiAdmin() {
         <NavigationAdmin activeSelect="TRANSAKSI" />
       </div>
       <div className="col-9 main-dash-admin">
-        <HeaderAdmin/>
+        <HeaderAdmin />
 
         <h3 className="title-admin">Transaksi</h3>
 
@@ -20,21 +20,21 @@ function TransaksiAdmin() {
               All
             </button>
           </li>
-          <li class="nav-item">
+          {/* <li class="nav-item">
             <a class="btn" href="#">
               Overdue
             </a>
-          </li>
+          </li> */}
         </ul>
 
-        <hr/>
-        
+        <hr />
+
         <div className="table-penitipan">
           <TableTransaksiAdmin />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default TransaksiAdmin
+export default TransaksiAdmin;

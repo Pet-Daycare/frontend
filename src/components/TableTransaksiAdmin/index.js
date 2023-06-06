@@ -1,82 +1,70 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import './index.scss';
+import "./index.scss";
 
 import { useNavigate } from "react-router-dom";
 
-function TableTransaksiAdmin(){
-    const [data, loadData] = useState([]);
-    
-    const navigate = useNavigate();
+function TableTransaksiAdmin() {
+  const [data, loadData] = useState([]);
 
-    const topup = data
+  const navigate = useNavigate();
 
-async function handleVerif(item) {
+  const topup = data;
+
+  async function handleVerif(item) {
     // TODO: LOGIC
-    console.log(item.id)
+    console.log(item.id);
 
-    let response = await axios.put(
-        "http://localhost:8081/api/customer/topup/detail/aproval/" + item.id
-    ).catch((err) => alert(err));
+    // let response = await axios
+    //   .put("http://localhost:8081/api/customer/topup/detail/aproval/" + item.id)
+    //   .catch((err) => alert(err));
 
-    
-    console.log(response);
-    alert("Verification successful!")
-    navigate('./')
-    }
+    // console.log(response);
+    alert("Verification successful!");
+    navigate("./");
+  }
 
-    useEffect(() => {
-        const dataRes = async () => {
-        let response = await axios.get("http://localhost:8081/api/payment/admin/all-bills")
+  useEffect(() => {
+    const dataRes = async () => {
+      let response = await axios
+        .get("http://localhost:8081/api/payment/admin/all-bills")
         .catch((err) => alert(err));
-        console.log("--------------");
-        console.log(response);
-        console.log("--------------");
+      console.log("--------------");
+      console.log(response);
+      console.log("--------------");
 
-        loadData(response.data)
-        console.log(data)
-        
-      };
-      dataRes();
-    }, []);
+      loadData(response.data);
+      console.log(data);
+    };
+    dataRes();
+  }, []);
 
-    
-    return (
-        <div className='table-transaksi'>
-            <table>
-                <tr>
-                    <td>
-                        <p className='pet-name'>Moka</p>
-                        <p className='owner'>by Ozan</p>
-                    </td>
-                    <td>
-                        <p className='pickup-date'>02 - 04 April 2023</p>
-                    </td>
-                    <td>
-                        <p className='status'>Rp 500.000,00</p>
-                    </td>
-                    <td>
-                        <button className='detail-button'>Verifikasi</button>
-                    </td>
-                </tr>
-                {topup.map(item => (
-                <tr>
-                    <td>
-                        <p className='pet-name'>{item.idCustomer}</p>
-                        {/* <p className='owner'>by {item.userId}</p> */}
-                    </td>
-                    <td>
-                        <p className='status'>{item.total}</p>
-                    </td>
-                    <td>
-                        <button className='detail-button'>Verifikasi</button>
-                    </td>
-                    </tr>
-                ))}
-            </table>
-        </div>
-    );
+  return (
+    <div className="table-transaksi">
+      <table>
+        {topup.map((item) => (
+          <tr>
+            <td>
+              <p className="pet-name">{item.username}</p>
+              {/* <p className='owner'>by {item.userId}</p> */}
+            </td>
+            <td>
+              <p className="status">{item.total}</p>
+            </td>
+            <td>
+              <button
+                className="detail-button"
+                onClick={() => handleVerif(item)}
+              >
+                Verifikasi
+              </button>
+            </td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  );
 }
 
 export default TableTransaksiAdmin;
