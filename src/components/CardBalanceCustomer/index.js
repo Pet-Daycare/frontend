@@ -15,17 +15,14 @@ function CardBalance() {
   console.log(username);
   console.log(token);
 
-
   useEffect(() => {
     const dataRes = async () => {
-      let response = await axios.get("http://localhost:8081/api/customer/frontend", { 
-        params: 
-          { username: username, 
-            token: token
-          } 
-      }
-    ).then((data) => loadData(data.data))
-    .catch((err) => alert(err));
+      let response = await axios
+        .get("http://34.172.96.175/api/customer/frontend", {
+          params: { username: username, token: token },
+        })
+        .then((data) => loadData(data.data))
+        .catch((err) => alert(err));
       console.log(data);
     };
     //s

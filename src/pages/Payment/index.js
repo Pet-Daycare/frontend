@@ -7,7 +7,7 @@ import PetWalletVoucher from "./PetWalletVoucher";
 import PetWalletCoupon from "./PetWalletCoupon";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Payment() {
   const params = useParams();
@@ -26,19 +26,22 @@ function Payment() {
 
   const username = window.localStorage.getItem("username");
   const token = window.localStorage.getItem("token");
-  
+
   const [balance, setBalance] = useState();
   // const [idPenitipan, setIdPenitipan] = useState();
   const [idPembayaran, setIdPembayaran] = useState();
-  const [totalPembayaran, setTotalpembayaran] = useState();
-  const [paymentResponse, setPaymentResponse] = useState(1);
 
-  
-  let bal = window.localStorage.getItem("balance")
-  let idPenitipan = window.localStorage.getItem("penitipanId")
+  const location = useLocation();
+  const penitipanData = location.state.penitipanData;
+
+  const [totalPembayaran, setTotalpembayaran] = useState();
+  const [idPenitipan, setIdPenitipan] = useState();
+
+  let bal = window.localStorage.getItem("balance");
+  // let idPenitipan = window.localStorage.getItem("penitipanId")
   let total = 0;
 
-  let topup = data
+  // let topup = data
   const handleCancel = (e) => {
     navigate("/dashboard");
   };
@@ -46,33 +49,46 @@ function Payment() {
   const handlePay = async (e) => {
     e.preventDefault();
     try {
-      let code = ""
-      let sendMethod = ""
-      if(method == "PETWALLET"){
-        sendMethod = "PET_WALLET"
+      let code = "";
+      let sendMethod = "";
+
+      if (method === "PetWallet") {
+        sendMethod = "PET_WALLET";
+      } else if (method === "PetWallet with coupon") {
+        sendMethod = "PET_WALLET_WITH_COUPON";
+        code = couponCode;
+      } else if (method === "PetWallet with voucher") {
+        sendMethod = "PET_WALLET_WITH_VOUCHER";
+        code = voucherCode;
       }
+
       const payload = {
         idPenitipan: idPenitipan,
         username: username,
         token: token,
-        total: paymentResponse,
+        total: totalPembayaran,
         method: sendMethod,
         code: code,
       };
 
-
-      console.log(payload)
-
-      // if (method === "PetWallet with coupon") {
-      //   payload.code = couponCode;
-      // } else if (method === "PetWallet with voucher") {
-      //   payload.code = voucherCode;
-      // }
+      console.log(payload);
 
       const response = await axios.post(
-        "http://localhost:8081/api/payment/customer/pay",
+        // "http://localhost:8081/api/payment/customer/pay",
+        "http://34.172.96.175/api/payment/customer/pay",
         payload
       );
+
+      if (response.data.paid === true) {
+        alert(
+          "You've successfully made a payment with " +
+            method +
+            ". Please wait for admin to verify."
+        );
+        navigate("/dashboard");
+      } else {
+        alert("Payment Failed. Please check your balance or code.");
+      }
 
       // // Handle the response
       console.log(response.data);
@@ -89,24 +105,20 @@ function Payment() {
   const handleVoucherCodeChange = (e) => {
     setVoucherCode(e.target.value);
   };
-  let id = localStorage.getItem("penitipanId")
+  let id = localStorage.getItem("penitipanId");
 
+  // get penitipan response
   useEffect(() => {
     const dataRes = async () => {
-      let response = await axios.get("http://localhost:8082/api/v1/Penitipan/get/"+ id
-    )
-    .catch((err) => alert(err));
-    loadData(response.data)
-    topup = response.data
-    console.log(response.data);
-    total = response.data.initialCost
-    console.log(total);
+      loadData(penitipanData);
+      console.log(penitipanData);
+      setTotalpembayaran(penitipanData.initialCost);
+      setIdPenitipan(penitipanData.id);
+      // topup = response.data
+      console.log(penitipanData);
+    };
 
-    setPaymentResponse(response.data.initialCost)
-    console.log(paymentResponse)
-  };
-  
-  console.log("test" + data);
+    console.log("test" + data);
     dataRes();
     method === "PetWallet"
       ? setPetWalletContentVisible(true)
@@ -118,12 +130,9 @@ function Payment() {
       ? setPetWalletVoucherContentVisible(true)
       : setPetWalletVoucherContentVisible(false);
 
-
     if (totalPembayaran == null) {
       // getPaymentDetail();
     }
-    
-    
   }, [method]);
 
   const handleOnChange = (e) => {
@@ -150,10 +159,8 @@ function Payment() {
   // }
 
   // console.log(topup)
-  // console.log(bal)
-  console.log("total:" + total)
-  
-  console.log("pay" + paymentResponse)
+  // // console.log(bal)
+  // console.log("total:" + total)
   return (
     <div class="change-page">
       <HeaderLogout />
@@ -182,11 +189,11 @@ function Payment() {
           </form>
 
           {PetWalletContentVisible && (
-            <PetWallet balance={bal} totalPembayaran={paymentResponse} />
+            <PetWallet balance={bal} totalPembayaran={totalPembayaran} />
           )}
           {PetWalletCouponContentVisible && (
             <PetWalletCoupon
-              balance={balance}
+              balance={bal}
               totalPembayaran={totalPembayaran}
               couponCode={couponCode}
               onCouponCodeChange={handleCouponCodeChange}
@@ -194,7 +201,7 @@ function Payment() {
           )}
           {PetWalletVoucherContentVisible && (
             <PetWalletVoucher
-              balance={balance}
+              balance={bal}
               totalPembayaran={totalPembayaran}
               voucherCode={voucherCode}
               onVoucherCodeChange={handleVoucherCodeChange}

@@ -22,10 +22,6 @@ function PetWalletVoucher({
           onChange={onVoucherCodeChange}
         ></input>
       </form>
-      <div className="d-flex justify-content-between">
-        <p>Voucher amount</p>
-        <p>{totalPembayaran}</p>
-      </div>
       <div className="d-flex justify-content-between text-decs">
         <p>Total price</p>
         <p>{totalPembayaran}</p>
